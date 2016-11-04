@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    <servlet>
+        <servlet-name>SSLServlet</servlet-name>
+        <servlet-class>com.ssl.servlet.SSLServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SSLServlet</servlet-name>
+        <url-pattern>/sslServlet</url-pattern>
+    </servlet-mapping>
+    <!-- 强制SSL配置，即普通的请求也会重定向为SSL请求 -->
+     <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>TestSSL</web-resource-name>
+            <url-pattern>/*</url-pattern> <!-- 全站使用SSL -->
+        </web-resource-collection> 
+        <user-data-constraint>
+            <description>SSL required</description>
+            <!-- CONFIDENTIAL: 要保证服务器和客户端之间传输的数据不能够被修改，且不能被第三方查看到
+            INTEGRAL: 要保证服务器和client之间传输的数据不能够被修改
+            NONE: 指示容器必须能够在任一的连接上提供数据。（即用HTTP或HTTPS，由客户端来决定） -->
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint> 
+</web-app>
