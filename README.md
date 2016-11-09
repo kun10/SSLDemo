@@ -3,7 +3,7 @@ Tomcat搭建SSL双向认证Demo、Java原生类库SSLSocket编程、Apache的Htt
 
 # 证书准备
 
-见之前[keytool命令](https://note.youdao.com/web/#/file/recent/md/D1E1BC1486EA427A8EFF042DBB3F977E/)中的**keytool生成双向认证证书**章节
+见之前[keytool命令](http://note.youdao.com/noteshare?id=3c769cd3ed0547004a87e31acb67d00c)中的**keytool生成双向认证证书**章节
 
 测试证书库：/TestSSL/WebContent/keystore
 
