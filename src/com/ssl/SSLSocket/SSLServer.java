@@ -28,18 +28,21 @@ public class SSLServer {
 	public void init() throws Exception {
 		int port = 1234;
 		String keystorePath = "E:\\cer\\server.keystore";
-		String trustKeystorePath = "E:\\cer\\server.keystore";
+		String trustKeystorePath = "E:\\cer\\server.truststore";
 		String keystorePassword = "121314";
+		String truststorePassword = "121314";
+		
+		//这个类是原生包中的SSL连接的上下文类
 		SSLContext context = SSLContext.getInstance("SSL");
 		
-		//客户端证书库
+		//服务器端证书库
 		KeyStore keystore = KeyStore.getInstance(KeyStore.getDefaultType());
 		FileInputStream keystoreFis = new FileInputStream(keystorePath);
 		keystore.load(keystoreFis, keystorePassword.toCharArray());
 		//信任证书库
 		KeyStore trustKeystore = KeyStore.getInstance("jks");
 		FileInputStream trustKeystoreFis = new FileInputStream(trustKeystorePath);
-		trustKeystore.load(trustKeystoreFis, keystorePassword.toCharArray());
+		trustKeystore.load(trustKeystoreFis, truststorePassword.toCharArray());
 		
 		//密钥库
 		KeyManagerFactory kmf = KeyManagerFactory.getInstance("sunx509");

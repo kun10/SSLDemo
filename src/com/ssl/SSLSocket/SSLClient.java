@@ -33,7 +33,7 @@ public class SSLClient {
 		client.process();
 	}
 	
-	//客户端将要使用到client.keystore和ca-trust.keystore
+	
 	public void init() throws Exception {
 		String host = "127.0.0.1";
 		int port = 1234;

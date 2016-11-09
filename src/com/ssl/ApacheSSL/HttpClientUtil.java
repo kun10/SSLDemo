@@ -37,8 +37,8 @@ public class HttpClientUtil {
     public static void main(String[] args){
         String url=HTTPS_URL;
         Map params=new HashMap();
-        params.put("cmd","test");
-        params.put("data","֤��1");
+        params.put("cmd","testcmd");
+        params.put("data","testData");
         String charset="utf-8";
         doSSLPost( url, params,  charset);
     }

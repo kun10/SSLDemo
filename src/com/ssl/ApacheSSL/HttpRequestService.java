@@ -68,7 +68,6 @@ public class HttpRequestService {
 		formparams.add(new BasicNameValuePair("cmd", "zhou"));
 		formparams.add(new BasicNameValuePair("data", "kunkun"));
 		String res = httpService.sendPost("https://127.0.0.1:8443/TestSSL/sslServlet", formparams);
-		System.out.println("返回："+res);
 	}
 
 	public HttpRequestService() {
@@ -216,6 +215,10 @@ public class HttpRequestService {
 
 
 	}
+	/**
+	 * 上下文初始化
+	 * @return
+	 */
 	public static SSLContext getSSLContext() {
 		long time1 = System.currentTimeMillis();
 		if (sslContext == null) {
